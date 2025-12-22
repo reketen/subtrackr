@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextResponse } from "next/server";
-import { db } from "@/lib/firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { adminDb } from "@/lib/firebase-admin";
 import { Resend } from "resend";
 import { addDays, format, startOfDay, isSameDay, parseISO } from "date-fns";
 import { calculateNextBillingDate } from "@/lib/date-utils";
@@ -20,8 +19,7 @@ export async function GET(request: Request) {
     }
 
     try {
-        const usersRef = collection(db, "users");
-        const usersSnapshot = await getDocs(usersRef);
+        const usersSnapshot = await adminDb.collection("users").get();
         const results = [];
 
         // 2. Iterate through all users
@@ -34,16 +32,16 @@ export async function GET(request: Request) {
             }
 
             const userId = userDoc.id;
-            const subsRef = collection(db, "subscriptions");
-            const q = query(subsRef, where("userId", "==", userId));
-            const subsSnapshot = await getDocs(q);
+            const subsSnapshot = await adminDb.collection("subscriptions")
+                .where("userId", "==", userId)
+                .get();
 
             const tomorrow = addDays(startOfDay(new Date()), 1);
 
             // 3. Check for subscriptions due tomorrow
             const dueSubscriptions = subsSnapshot.docs
                 .map(doc => {
-                    const data = doc.data() as any;
+                    const data = doc.data();
                     // Calculate dynamic next billing date
                     const effectiveDate = calculateNextBillingDate(data.startDate, data.billingPeriod);
                     return { ...data, effectiveDate };
