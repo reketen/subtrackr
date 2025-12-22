@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <!-- Background -->
+  <rect width="1200" height="800" rx="16" fill="#0f172a"/>
+  
+  <!-- Sidebar -->
+  <rect width="250" height="800" fill="#1e293b" opacity="0.5"/>
+  <rect x="40" y="40" width="40" height="40" rx="8" fill="#4f46e5"/>
+  <rect x="100" y="50" width="100" height="20" rx="4" fill="#cbd5e1" opacity="0.2"/>
+  
+  <!-- Sidebar Items -->
+  <rect x="40" y="140" width="170" height="40" rx="8" fill="#334155" opacity="0.4"/>
+  <rect x="40" y="200" width="170" height="40" rx="8" fill="#334155" opacity="0.1"/>
+  <rect x="40" y="260" width="170" height="40" rx="8" fill="#334155" opacity="0.1"/>
+  
+  <!-- Quick Stats -->
+  <g transform="translate(300, 40)">
+    <rect width="280" height="140" rx="12" fill="#1e293b"/>
+    <rect x="24" y="24" width="40" height="40" rx="8" fill="#10b981" opacity="0.1"/>
+    <rect x="24" y="80" width="120" height="30" rx="4" fill="#cbd5e1"/>
+    <rect x="24" y="115" width="80" height="10" rx="2" fill="#94a3b8" opacity="0.5"/>
+    
+    <rect x="300" y="0" width="280" height="140" rx="12" fill="#1e293b"/>
+    <rect x="324" y="24" width="40" height="40" rx="8" fill="#6366f1" opacity="0.1"/>
+    <rect x="324" y="80" width="60" height="30" rx="4" fill="#cbd5e1"/>
+    <rect x="324" y="115" width="100" height="10" rx="2" fill="#94a3b8" opacity="0.5"/>
+
+    <rect x="600" y="0" width="260" height="140" rx="12" fill="#1e293b"/> <!-- Creating Card look -->
+  </g>
+
+  <!-- Table Header -->
+  <g transform="translate(300, 220)">
+    <rect width="860" height="60" rx="8" fill="#1e293b"/>
+    <rect x="30" y="20" width="100" height="20" rx="4" fill="#94a3b8" opacity="0.3"/>
+    <rect x="250" y="20" width="60" height="20" rx="4" fill="#94a3b8" opacity="0.3"/>
+    <rect x="450" y="20" width="60" height="20" rx="4" fill="#94a3b8" opacity="0.3"/>
+    <rect x="650" y="20" width="100" height="20" rx="4" fill="#94a3b8" opacity="0.3"/>
+  </g>
+
+  <!-- Rows -->
+  <g transform="translate(300, 300)">
+    <!-- Row 1 -->
+    <rect width="860" height="80" rx="8" fill="#1e293b" opacity="0.5"/>
+    <circle cx="50" cy="40" r="16" fill="#e50914"/> <!-- Netflix red ish -->
+    <rect x="80" y="30" width="120" height="20" rx="4" fill="#cbd5e1"/>
+    <rect x="450" y="30" width="50" height="20" rx="4" fill="#cbd5e1"/>
+    
+    <!-- Row 2 -->
+    <rect y="100" width="860" height="80" rx="8" fill="#1e293b" opacity="0.5"/>
+    <circle cx="50" cy="140" r="16" fill="#1db954"/> <!-- Spotify green ish -->
+    <rect x="80" y="130" width="100" height="20" rx="4" fill="#cbd5e1"/>
+    <rect x="450" y="130" width="50" height="20" rx="4" fill="#cbd5e1"/>
+    
+    <!-- Row 3 -->
+    <rect y="200" width="860" height="80" rx="8" fill="#1e293b" opacity="0.5"/>
+    <circle cx="50" cy="240" r="16" fill="#007aff"/> <!-- Apple blue ish -->
+    <rect x="80" y="230" width="140" height="20" rx="4" fill="#cbd5e1"/>
+    <rect x="450" y="230" width="50" height="20" rx="4" fill="#cbd5e1"/>
+  </g>
+  
+  <!-- Gradient Overlay -->
+  <rect width="1200" height="800" rx="16" fill="url(#grad1)" opacity="0.2"/>
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(99,102,241);stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:rgb(168,85,247);stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+</svg>
