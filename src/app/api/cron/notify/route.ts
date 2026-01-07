@@ -63,7 +63,7 @@ export async function GET(request: Request) {
                         `).join('')}
                     </ul>
                     <p>Total: $${dueSubscriptions.reduce((acc: number, sub: any) => acc + sub.price, 0).toFixed(2)}</p>
-                    <p><a href="https://subtrackr.app">Manage Subscriptions</a></p>
+                    <p><a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://subtrackr-ten.vercel.app'}">Manage Subscriptions</a></p>
                 `;
 
                 const { error } = await resend.emails.send({
